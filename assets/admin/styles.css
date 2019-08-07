@@ -1,0 +1,52 @@
+.approveme-documents {
+	max-width: 75%;
+	margin: 0 auto;
+}
+
+.approveme-document {
+	/* Add shadows to create the "card" effect */
+	border: 1px solid #9c9c9c;
+	background-color: #ffffff;
+	transition: 0.2s;
+	width: 170px;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 5px; /* 5px rounded corners */
+	display: inline-block;
+	margin: 5px;
+	height: 200px;
+}
+
+.approveme-document .document-title {
+	font-weight: 600;
+	display: block;
+	padding: 2px 0 12px 0;
+}
+
+/* On mouse-over, add a deeper shadow */
+.approveme-document:hover {
+	border: 1px solid #c9c9c9;
+	cursor: pointer;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+.approveme-document .container .dashicons {
+	border: 1px solid #9c9c9c;
+	border-radius: 15px;
+	padding: 5px;
+}
+
+.approveme-documents .container .dashicons:not(:last-child) {
+	margin-right: 4px;
+}
+
+/* Add some padding inside the card container */
+.approveme-document .container {
+	display: block;
+	padding: 2px 16px;
+}
+
+.approveme-document .container a {
+	text-decoration: none;
+	color: inherit;
+}
