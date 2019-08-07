@@ -5,7 +5,7 @@ namespace ApproveMe;
 use ApprovemeAPI\Client\Api;
 
 /**
- * Easy_Digital_Downloads Class.
+ * ApproveMe Class.
  *
  * @since 1.4
  * @since 1.0 Refactored and restructured to work with ApproveMe_Requirements_Check.
@@ -59,7 +59,7 @@ class Base {
 	 * @uses ApproveMe::setup_files() Setup required files.
 	 * @see ApproveMe()
 	 *
-	 * @return object|ApproveMe The one true Easy_Digital_Downloads
+	 * @return object|ApproveMe The one true ApproveMe
 	 */
 	public static function instance( $file = '' ) {
 

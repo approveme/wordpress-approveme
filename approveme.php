@@ -227,7 +227,7 @@ final class ApproveMe_Requirements_Check {
 	 * @return string
 	 */
 	private function unmet_requirements_label() {
-		return esc_html__( 'Easy Digital Download Requirements', 'approveme' );
+		return esc_html__( 'ApproveMe Requirements', 'approveme' );
 	}
 
 	/**
@@ -237,7 +237,7 @@ final class ApproveMe_Requirements_Check {
 	 * @return string
 	 */
 	private function unmet_requirements_name() {
-		return 'edd-requirements';
+		return 'approveme-requirements';
 	}
 
 	/** Agnostic Methods ******************************************************/
@@ -449,7 +449,7 @@ final class ApproveMe_Requirements_Check {
 			: get_locale();
 
 		/**
-		 * Defines the plugin language locale used in Easy Digital Downloads.
+		 * Defines the plugin language locale used in ApproveMe.
 		 *
 		 * @var $get_locale The locale to use. Uses get_user_locale()` in WordPress 4.7 or greater,
 		 *                  otherwise uses `get_locale()`.
@@ -457,14 +457,11 @@ final class ApproveMe_Requirements_Check {
 		$locale = apply_filters( 'plugin_locale', $get_locale, 'approveme' );
 		$mofile = sprintf( '%1$s-%2$s.mo', 'approveme', $locale );
 
-		// Look for wp-content/languages/edd/easy-digital-downloads-{lang}_{country}.mo
+		// Look for wp-content/languages/approveme/approveme-{lang}_{country}.mo
 		$mofile_global1 = WP_LANG_DIR . "/approveme/approveme-{$locale}.mo";
 
-		// Look for wp-content/languages/edd/edd-{lang}_{country}.mo
-		$mofile_global2 = WP_LANG_DIR . "/approveme/approveme-{$locale}.mo";
-
-		// Look in wp-content/languages/plugins/easy-digital-downloads
-		$mofile_global3 = WP_LANG_DIR . "/plugins/approveme/{$mofile}";
+		// Look in wp-content/languages/plugins/approveme
+		$mofile_global2 = WP_LANG_DIR . "/plugins/approveme/{$mofile}";
 
 		// Try to load from first global location
 		if ( file_exists( $mofile_global1 ) ) {
@@ -472,10 +469,6 @@ final class ApproveMe_Requirements_Check {
 
 			// Try to load from next global location
 		} elseif ( file_exists( $mofile_global2 ) ) {
-			load_textdomain( 'approveme', $mofile_global2 );
-
-			// Try to load from next global location
-		} elseif ( file_exists( $mofile_global3 ) ) {
 			load_textdomain( 'approveme', $mofile_global3 );
 
 			// Load the default language files
