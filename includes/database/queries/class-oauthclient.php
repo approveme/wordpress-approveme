@@ -1,6 +1,6 @@
 <?php
 /**
- * Adjustment Query Class.
+ * oAuth Client Query Class.
  *
  * @package     ApproveMe
  * @subpackage  Database\Queries

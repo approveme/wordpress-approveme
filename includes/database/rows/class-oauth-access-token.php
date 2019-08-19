@@ -1,6 +1,6 @@
 <?php
 /**
- * oAuthClient Database Object Class.
+ * oAuthAccessToken Database Object Class.
  *
  * @package     ApproveMe
  * @subpackage  Database\Rows
@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 use ApproveMe\Database\Row;
 
 /**
- * oAuthClient database row class.
+ * oAuthAccessToken database row class.
  *
  * This class exists solely to encapsulate database schema changes, to help
  * separate the needs of the application layer from the requirements of the
@@ -28,6 +28,6 @@ use ApproveMe\Database\Row;
  *
  * @since 3.0
  */
-class oAuthClient extends Row {
+class oAuthAccessToken extends Row {
 
 }

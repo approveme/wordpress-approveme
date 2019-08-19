@@ -1,6 +1,6 @@
 <?php
 /**
- * oAuth Clients Table.
+ * oAuth Access Tokens Table.
  *
  * @package     ApproveMe
  * @subpackage  Database\Tables
@@ -16,11 +16,11 @@ defined( 'ABSPATH' ) || exit;
 use ApproveMe\Database\Table;
 
 /**
- * Setup the global "approveme_oauth_clients" database table.
+ * Setup the global "approveme_oauth_access_tokens" database table.
  *
  * @since 3.0
  */
-final class oAuthClients extends Table {
+final class oAuthAccessTokens extends Table {
 
 	/**
 	 * Table name.
@@ -29,7 +29,7 @@ final class oAuthClients extends Table {
 	 * @since 3.0
 	 * @var string
 	 */
-	protected $name = 'oauth_clients';
+	protected $name = 'oauth_access_tokens';
 
 	/**
 	 * Database version.
@@ -66,12 +66,10 @@ final class oAuthClients extends Table {
 	 * @since 3.0
 	 */
 	protected function set_schema() {
-		$this->schema = "id bigint(20) unsigned NOT NULL auto_increment,
-			user_id varchar(20) NOT NULL,
-			name varchar(200) NOT NULL default '',
-			secret varchar(200) NOT NULL default '',
+		$this->schema = "id varchar(100) NOT NULL default '',
+			client_id bigint(20) NOT NULL,
 			created_at timestamp,
-			PRIMARY KEY (id)";
+			expires_at timestamp";
 	}
 
 	/**

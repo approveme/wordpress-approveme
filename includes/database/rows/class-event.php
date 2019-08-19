@@ -1,6 +1,6 @@
 <?php
 /**
- * oAuthClient Database Object Class.
+ * Event Database Object Class.
  *
  * @package     ApproveMe
  * @subpackage  Database\Rows
@@ -28,6 +28,6 @@ use ApproveMe\Database\Row;
  *
  * @since 3.0
  */
-class oAuthClient extends Row {
+class Event extends Row {
 
 }

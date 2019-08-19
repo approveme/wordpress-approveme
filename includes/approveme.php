@@ -232,16 +232,24 @@ class Base {
 
 		// Database Schemas
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/schemas/class-oauthclients.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/schemas/class-oauth-access-tokens.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/schemas/class-events.php';
 
 		// Database Objects
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/rows/class-oauthclient.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/rows/class-oauth-access-token.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/rows/class-event.php';
 
 		// Database Tables
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/tables/class-oauthclients.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/tables/class-oauth-access-tokens.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/tables/class-events.php';
 
 		// Database Table Query Interfaces
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-compare.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-oauthclient.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-oauth-access-token.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-event.php';
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <?php
 /**
- * oAuth Clients Schema Class.
+ * oAuthAccessTokens Schema Class.
  *
  * @package     ApproveMe
  * @subpackage  Database\Schemas
@@ -16,11 +16,11 @@ defined( 'ABSPATH' ) || exit;
 use ApproveMe\Database\Schema;
 
 /**
- * Adjustments Schema Class.
+ * oAuthAccessTokens Schema Class.
  *
  * @since 3.0
  */
-final class oAuthClients extends Schema {
+final class oAuthAccessTokens extends Schema {
 
 	/**
 	 * Array of database column objects.
@@ -33,37 +33,17 @@ final class oAuthClients extends Schema {
 		// id
 		array(
 			'name'       => 'id',
+			'type'       => 'varchar',
+			'length'     => '100',
+			'sortable'   => true,
+			'searchable' => true,
+		),
+
+		// client_id
+		array(
+			'name'       => 'client_id',
 			'type'       => 'bigint',
 			'length'     => '20',
-			'unsigned'   => true,
-			'extra'      => 'auto_increment',
-			'primary'    => true,
-			'sortable'   => true,
-		),
-
-		// user_id
-		array(
-			'name'       => 'user_id',
-			'type'       => 'varchar',
-			'length'     => '20',
-			'searchable' => true,
-			'sortable'   => true,
-		),
-
-		// name
-		array(
-			'name'       => 'name',
-			'type'       => 'varchar',
-			'length'     => '200',
-			'searchable' => true,
-			'sortable'   => true,
-		),
-
-		// secret
-		array(
-			'name'       => 'secret',
-			'type'       => 'varchar',
-			'length'     => '200',
 			'searchable' => true,
 			'sortable'   => true,
 		),
@@ -72,9 +52,13 @@ final class oAuthClients extends Schema {
 		array(
 			'name'       => 'created_at',
 			'type'       => 'timestamp',
-			'default'    => 'draft',
-			'date_query' => true,
-			'searchable' => true,
+			'sortable'   => true,
+		),
+
+		// expires_at
+		array(
+			'name'       => 'expires_at',
+			'type'       => 'timestamp',
 			'sortable'   => true,
 		),
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * oAuth Clients Schema Class.
+ * Events Schema Class.
  *
  * @package     ApproveMe
  * @subpackage  Database\Schemas
@@ -20,7 +20,7 @@ use ApproveMe\Database\Schema;
  *
  * @since 3.0
  */
-final class oAuthClients extends Schema {
+final class Events extends Schema {
 
 	/**
 	 * Array of database column objects.
@@ -41,29 +41,29 @@ final class oAuthClients extends Schema {
 			'sortable'   => true,
 		),
 
-		// user_id
+		// approveme_id
 		array(
-			'name'       => 'user_id',
-			'type'       => 'varchar',
-			'length'     => '20',
+			'name'       => 'approveme_id',
+			'type'       => 'text',
+			'length'     => '100',
 			'searchable' => true,
 			'sortable'   => true,
 		),
 
-		// name
+		// content
 		array(
-			'name'       => 'name',
-			'type'       => 'varchar',
-			'length'     => '200',
-			'searchable' => true,
-			'sortable'   => true,
+			'name'       => 'content',
+			'type'       => 'mediumtext',
+			'searchable' => false,
+			'sortable'   => false,
 		),
 
-		// secret
+		// status
 		array(
-			'name'       => 'secret',
-			'type'       => 'varchar',
-			'length'     => '200',
+			'name'       => 'status',
+			'type'       => 'int',
+			'length'     => '1',
+			'unsigned'   => true,
 			'searchable' => true,
 			'sortable'   => true,
 		),
@@ -71,6 +71,16 @@ final class oAuthClients extends Schema {
 		// created_at
 		array(
 			'name'       => 'created_at',
+			'type'       => 'timestamp',
+			'default'    => 'draft',
+			'date_query' => true,
+			'searchable' => true,
+			'sortable'   => true,
+		),
+
+		// processed_at
+		array(
+			'name'       => 'processed_at',
 			'type'       => 'timestamp',
 			'default'    => 'draft',
 			'date_query' => true,

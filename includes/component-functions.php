@@ -121,6 +121,24 @@ function approveme_setup_components() {
 		'meta'   => false,
 	) );
 
+	// Register oAuthAccessToken.
+	approveme_register_component( 'oauthaccesstoken', array(
+		'schema' => '\\ApproveMe\\Database\\Schema\\oAuthAccessTokens',
+		'table'  => '\\ApproveMe\\Database\\Tables\\oAuthAccessTokens',
+		'query'  => '\\ApproveMe\\Database\\Queries\\oAuthAccessToken',
+		'object' => '\\ApproveMe\\Database\\Rows\\oAuthAccessToken',
+		'meta'   => false,
+	) );
+
+	// Register Events.
+	approveme_register_component( 'events', array(
+		'schema' => '\\ApproveMe\\Database\\Schema\\Events',
+		'table'  => '\\ApproveMe\\Database\\Tables\\Events',
+		'query'  => '\\ApproveMe\\Database\\Queries\\Event',
+		'object' => '\\ApproveMe\\Database\\Rows\\Event',
+		'meta'   => false,
+	) );
+
 	// Set the locally static setup var.
 	$setup = true;
 

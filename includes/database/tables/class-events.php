@@ -1,6 +1,6 @@
 <?php
 /**
- * oAuth Clients Table.
+ * Events Table.
  *
  * @package     ApproveMe
  * @subpackage  Database\Tables
@@ -16,11 +16,11 @@ defined( 'ABSPATH' ) || exit;
 use ApproveMe\Database\Table;
 
 /**
- * Setup the global "approveme_oauth_clients" database table.
+ * Setup the global "approveme_events" database table.
  *
  * @since 3.0
  */
-final class oAuthClients extends Table {
+final class Events extends Table {
 
 	/**
 	 * Table name.
@@ -29,7 +29,7 @@ final class oAuthClients extends Table {
 	 * @since 3.0
 	 * @var string
 	 */
-	protected $name = 'oauth_clients';
+	protected $name = 'events';
 
 	/**
 	 * Database version.
@@ -67,10 +67,11 @@ final class oAuthClients extends Table {
 	 */
 	protected function set_schema() {
 		$this->schema = "id bigint(20) unsigned NOT NULL auto_increment,
-			user_id varchar(20) NOT NULL,
-			name varchar(200) NOT NULL default '',
-			secret varchar(200) NOT NULL default '',
+			approveme_id text(100) NOT NULL default '',
+			content mediumtext NOT NULL default '',
+			status int(1) unsigned NOT NULL default '0',
 			created_at timestamp,
+			processed_at timestamp,
 			PRIMARY KEY (id)";
 	}
 
