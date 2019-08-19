@@ -6,7 +6,7 @@
  * @subpackage  Database\Rows
  * @copyright   Copyright (c) 2018, ApproveMe, LLC
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       3.0
+ * @since       1.0
  */
 namespace ApproveMe\Database\Rows;
 
@@ -26,7 +26,7 @@ use ApproveMe\Database\Row;
  * formatted differently, this class will make sure old values are still
  * supported and new values do not conflict.
  *
- * @since 3.0
+ * @since 1.0
  */
 class oAuthClient extends Row {
 

@@ -6,7 +6,7 @@
  * @subpackage  Database\Queries
  * @copyright   Copyright (c) 2018, ApproveMe, LLC
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       3.0
+ * @since       1.0
  */
 namespace ApproveMe\Database\Queries;
 
@@ -18,7 +18,7 @@ use ApproveMe\Database\Query;
 /**
  * Class used for querying adjustments.
  *
- * @since 3.0
+ * @since 1.0
  *
  * @see \ApproveMe\Database\Queries\oAuthClient::__construct() for accepted arguments.
  */
@@ -29,7 +29,7 @@ class Event extends Query {
 	/**
 	 * Name of the database table to query.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access protected
 	 * @var string
 	 */
@@ -38,7 +38,7 @@ class Event extends Query {
 	/**
 	 * String used to alias the database table in MySQL statement.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access protected
 	 * @var string
 	 */
@@ -47,7 +47,7 @@ class Event extends Query {
 	/**
 	 * Name of class used to setup the database schema
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access protected
 	 * @var string
 	 */
@@ -58,7 +58,7 @@ class Event extends Query {
 	/**
 	 * Name for a single item
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access protected
 	 * @var string
 	 */
@@ -67,7 +67,7 @@ class Event extends Query {
 	/**
 	 * Plural version for a group of items.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access protected
 	 * @var string
 	 */
@@ -76,7 +76,7 @@ class Event extends Query {
 	/**
 	 * Callback function for turning IDs into objects
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access protected
 	 * @var mixed
 	 */
@@ -87,7 +87,7 @@ class Event extends Query {
 	/**
 	 * Group to cache queries and queried items in.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access protected
 	 * @var string
 	 */
@@ -98,7 +98,7 @@ class Event extends Query {
 	/**
 	 * Sets up the event query, based on the query vars passed.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access protected
 	 *
 	 * @param string|array $query {

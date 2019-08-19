@@ -6,7 +6,7 @@
  * @subpackage  Database
  * @copyright   Copyright (c) 2018, ApproveMe, LLC
  * @license     http://opensource.org/licenses/gpl-3.0.0.php GNU Public License
- * @since       3.0
+ * @since       1.0
  */
 namespace ApproveMe\Database;
 
@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
  * database interfaces, starting with a magic getter, but likely expanding into
  * a magic call handler and others.
  *
- * @since 3.0
+ * @since 1.0
  */
 class Base {
 
@@ -29,7 +29,7 @@ class Base {
 	/**
 	 * Global prefix used for tables/hooks/cache-groups/etc...
 	 *
-	 * @since 3.0.0
+	 * @since 1.0.0
 	 * @var   string
 	 */
 	protected $prefix = 'approveme';
@@ -37,7 +37,7 @@ class Base {
 	/**
 	 * The last database error, if any.
 	 *
-	 * @since 3.0.0
+	 * @since 1.0.0
 	 * @var   mixed
 	 */
 	protected $last_error = false;
@@ -47,7 +47,7 @@ class Base {
 	/**
 	 * Magic isset'ter for immutability.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param string $key
 	 * @return mixed
@@ -78,7 +78,7 @@ class Base {
 	/**
 	 * Magic getter for immutability.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param string $key
 	 * @return mixed
@@ -109,7 +109,7 @@ class Base {
 	/**
 	 * Converts the given object to an array.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return array Array version of the given object.
 	 */
@@ -122,7 +122,7 @@ class Base {
 	/**
 	 * Maybe append the prefix to string.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param string $string
 	 * @param string $sep
@@ -144,7 +144,7 @@ class Base {
 	 * - No accents
 	 * - No trailing underscores
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param string $string
 	 * @param string $sep
@@ -188,7 +188,7 @@ class Base {
 	 * - No double underscores
 	 * - No trailing underscores
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param string $name The name of the database table
 	 *
@@ -231,7 +231,7 @@ class Base {
 	/**
 	 * Set class variables from arguments.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @param array $args
 	 */
 	protected function set_vars( $args = array() ) {
@@ -257,7 +257,7 @@ class Base {
 	 *
 	 * See: https://core.trac.wordpress.org/ticket/31556
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return object Database interface, or False if not set
 	 */
@@ -293,7 +293,7 @@ class Base {
 	/**
 	 * Check if an operation succeeded
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param mixed $result
 	 * @return boolean

@@ -6,7 +6,7 @@
  * @subpackage  Database\Tables
  * @copyright   Copyright (c) 2018, ApproveMe, LLC
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       3.0
+ * @since       1.0
  */
 namespace ApproveMe\Database;
 
@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
  * - Tables upgrade via independent upgrade abstract methods
  * - Multisite friendly - site tables switch on "switch_blog" action
  *
- * @since 3.0
+ * @since 1.0
  */
 abstract class Table extends Base {
 
@@ -102,7 +102,7 @@ abstract class Table extends Base {
 	/**
 	 * Array of interface objects instantiated during init
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @var array
 	 */
@@ -111,7 +111,7 @@ abstract class Table extends Base {
 	/**
 	 * Array of interface keys
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @var array
 	 */
@@ -128,7 +128,7 @@ abstract class Table extends Base {
 	/**
 	 * Hook into queries, admin screens, and more!
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	public function __construct() {
 
@@ -160,7 +160,7 @@ abstract class Table extends Base {
 	/**
 	 * Setup the database table
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	protected abstract function set_schema();
 
@@ -171,7 +171,7 @@ abstract class Table extends Base {
 	 *
 	 * Hooked to the "switch_blog" action.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param int $site_id The site being switched to
 	 */
@@ -193,7 +193,7 @@ abstract class Table extends Base {
 	 *
 	 * Hooked to the `admin_init` action.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	public function maybe_upgrade() {
 
@@ -220,7 +220,7 @@ abstract class Table extends Base {
 	/**
 	 * Return whether this table needs an upgrade.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param mixed $version Database version to check if upgrade is needed
 	 *
@@ -248,7 +248,7 @@ abstract class Table extends Base {
 	/**
 	 * Return whether this table can be upgraded.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return boolean True if table can be upgraded. False if not.
 	 */
@@ -269,7 +269,7 @@ abstract class Table extends Base {
 	 * This is public method for accessing a private variable so that it cannot
 	 * be externally modified.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return string
 	 */
@@ -282,7 +282,7 @@ abstract class Table extends Base {
 	/**
 	 * Install a database table by creating the table and setting the version.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	public function install() {
 		$created = $this->create();
@@ -296,7 +296,7 @@ abstract class Table extends Base {
 	/**
 	 * Destroy a database table by dropping the table and deleting the version.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	public function uninstall() {
 		$dropped = $this->drop();
@@ -312,7 +312,7 @@ abstract class Table extends Base {
 	/**
 	 * Check if table already exists
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return bool
 	 */
@@ -339,7 +339,7 @@ abstract class Table extends Base {
 	/**
 	 * Check if table already exists
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return bool
 	 */
@@ -366,7 +366,7 @@ abstract class Table extends Base {
 	/**
 	 * Create the table
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return bool
 	 */
@@ -391,7 +391,7 @@ abstract class Table extends Base {
 	/**
 	 * Drop the database table
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return mixed
 	 */
@@ -416,7 +416,7 @@ abstract class Table extends Base {
 	/**
 	 * Truncate the database table
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return mixed
 	 */
@@ -441,7 +441,7 @@ abstract class Table extends Base {
 	/**
 	 * Delete all items from the database table
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return mixed
 	 */
@@ -466,7 +466,7 @@ abstract class Table extends Base {
 	/**
 	 * Count the number of items in the database table
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return mixed
 	 */
@@ -493,7 +493,7 @@ abstract class Table extends Base {
 	/**
 	 * Set the auto_increment value of the database table
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param int $number
 	 *
@@ -530,7 +530,7 @@ abstract class Table extends Base {
 	/**
 	 * Upgrade the database table
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * return boolean
 	 */
@@ -565,7 +565,7 @@ abstract class Table extends Base {
 	/**
 	 * Upgrade to a specific database version
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param mixed  $version Database version to check if upgrade is needed
 	 * @param string $method
@@ -613,7 +613,7 @@ abstract class Table extends Base {
 	/**
 	 * Setup the necessary table variables
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	private function setup() {
 
@@ -645,7 +645,7 @@ abstract class Table extends Base {
 	 * This must be done directly because WordPress does not have a mechanism
 	 * for manipulating them safely
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	private function set_db_interface() {
 
@@ -699,7 +699,7 @@ abstract class Table extends Base {
 	/**
 	 * Set the database version for the table
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param mixed $version Database version to set when upgrading/creating
 	 */
@@ -722,7 +722,7 @@ abstract class Table extends Base {
 	/**
 	 * Get the table version from the database
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	private function get_db_version() {
 		$this->db_version = $this->is_global()
@@ -733,7 +733,7 @@ abstract class Table extends Base {
 	/**
 	 * Delete the table version from the database
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	private function delete_db_version() {
 		$this->db_version = $this->is_global()
@@ -744,7 +744,7 @@ abstract class Table extends Base {
 	/**
 	 * Add class hooks to WordPress actions
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	private function add_hooks() {
 
@@ -761,7 +761,7 @@ abstract class Table extends Base {
 	 *
 	 * This is primarily used to skip 'admin_init' and force-install tables.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return bool
 	 */
@@ -780,7 +780,7 @@ abstract class Table extends Base {
 	/**
 	 * Check if table is global
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return bool
 	 */
@@ -792,7 +792,7 @@ abstract class Table extends Base {
 	 * Try to get a callable upgrade method, with some magic to avoid needing to
 	 * do this dance repeatedly inside subclasses.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param string $method
 	 * @return boolean

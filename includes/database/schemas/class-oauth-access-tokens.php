@@ -6,7 +6,7 @@
  * @subpackage  Database\Schemas
  * @copyright   Copyright (c) 2018, ApproveMe, LLC
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       3.0
+ * @since       1.0
  */
 namespace ApproveMe\Database\Schemas;
 
@@ -18,14 +18,14 @@ use ApproveMe\Database\Schema;
 /**
  * oAuthAccessTokens Schema Class.
  *
- * @since 3.0
+ * @since 1.0
  */
 final class oAuthAccessTokens extends Schema {
 
 	/**
 	 * Array of database column objects.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @var array
 	 */
 	public $columns = array(

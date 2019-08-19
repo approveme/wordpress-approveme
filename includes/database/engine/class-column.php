@@ -6,7 +6,7 @@
  * @subpackage  Database\Schemas
  * @copyright   Copyright (c) 2018, ApproveMe, LLC
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       3.0
+ * @since       1.0
  */
 namespace ApproveMe\Database;
 
@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Base class used for each column for a custom table.
  *
- * @since 3.0
+ * @since 1.0
  *
  * @see Column::__construct() for accepted arguments.
  */
@@ -31,7 +31,7 @@ class Column extends Base {
 	 * other character (number, ascii, unicode, emoji, etc...) will result in
 	 * fatal application errors.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var string
 	 */
@@ -42,7 +42,7 @@ class Column extends Base {
 	 *
 	 * See: https://dev.mysql.com/doc/en/data-types.html
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var string
 	 */
@@ -53,7 +53,7 @@ class Column extends Base {
 	 *
 	 * See: https://dev.mysql.com/doc/en/storage-requirements.html
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var string
 	 */
@@ -64,7 +64,7 @@ class Column extends Base {
 	 *
 	 * See: https://dev.mysql.com/doc/en/numeric-type-overview.html
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -75,7 +75,7 @@ class Column extends Base {
 	 *
 	 * See: https://dev.mysql.com/doc/en/numeric-type-overview.html
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -86,7 +86,7 @@ class Column extends Base {
 	 *
 	 * See: https://dev.mysql.com/doc/en/binary-varbinary.html
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -97,7 +97,7 @@ class Column extends Base {
 	 *
 	 * See: https://dev.mysql.com/doc/en/data-type-defaults.html
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -108,7 +108,7 @@ class Column extends Base {
 	 *
 	 * See: https://dev.mysql.com/doc/en/data-type-defaults.html
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var string
 	 */
@@ -119,7 +119,7 @@ class Column extends Base {
 	 *
 	 * See: https://dev.mysql.com/doc/en/data-type-defaults.html
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var string
 	 */
@@ -134,7 +134,7 @@ class Column extends Base {
 	 *
 	 * See: https://dev.mysql.com/doc/mysql/en/charset-column.html
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var string
 	 */
@@ -149,7 +149,7 @@ class Column extends Base {
 	 *
 	 * See: https://dev.mysql.com/doc/mysql/en/charset-column.html
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var string
 	 */
@@ -161,7 +161,7 @@ class Column extends Base {
 	 * By default, columns do not have comments. This is unused by any other
 	 * relative code, but you can include less than 1024 characters here.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var string
 	 */
@@ -176,7 +176,7 @@ class Column extends Base {
 	 * class for several critical functions, including (but not limited to) the
 	 * cache key, meta-key relationships, auto-incrementing, etc...
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -189,7 +189,7 @@ class Column extends Base {
 	 * This is used by the Query class to set its value automatically to the
 	 * current datetime value immediately before insert.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -202,7 +202,7 @@ class Column extends Base {
 	 * This is used by the Query class to update its value automatically to the
 	 * current datetime value immediately before insert|update.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -215,7 +215,7 @@ class Column extends Base {
 	 * generate a unique string that can be used to identify a row in a database
 	 * table, typically in such a way that is unrelated to the row data itself.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -230,7 +230,7 @@ class Column extends Base {
 	 * manually to `%s|%d|%f` only if you are doing something weird, or are
 	 * explicitly storing numeric values in text-based column types.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var string
 	 */
@@ -245,7 +245,7 @@ class Column extends Base {
 	 * Avoid setting to `true` on large blobs of text, unless you've optimized
 	 * your database server to accommodate these kinds of queries.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -258,7 +258,7 @@ class Column extends Base {
 	 * class will accept complex statements to help narrow results down to
 	 * specific periods of time for values in this column.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -274,7 +274,7 @@ class Column extends Base {
 	 * You can safely turn this on for most numeric columns, indexed columns,
 	 * and text columns with intentionally limited lengths.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -288,7 +288,7 @@ class Column extends Base {
 	 *
 	 * Consider setting this to `false` for longer text columns.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -303,7 +303,7 @@ class Column extends Base {
 	 *
 	 * Consider setting this to `false` for longer text columns.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -320,7 +320,7 @@ class Column extends Base {
 	 *
 	 * Use in conjunction with a database index for speedy queries.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var string
 	 */
@@ -337,7 +337,7 @@ class Column extends Base {
 	 *
 	 * The Query class is responsible for triggering the event action.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var bool
 	 */
@@ -352,7 +352,7 @@ class Column extends Base {
 	 * is. You can set this to a callback function of your choice to override
 	 * the default validation behavior.
 	 *
-	 * @since 3.0.0
+	 * @since 1.0.0
 	 * @access public
 	 * @var string
 	 */
@@ -364,7 +364,7 @@ class Column extends Base {
 	 * These are used by the Query class to allow and disallow CRUD access to
 	 * column data, typically based on roles or capabilities.
 	 *
-	 * @since 3.0.0
+	 * @since 1.0.0
 	 * @access public
 	 * @var array
 	 */
@@ -376,7 +376,7 @@ class Column extends Base {
 	 * These are used by the Query class to allow for columns to be renamed
 	 * without requiring complex architectural backwards compatability support.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var array
 	 */
@@ -389,7 +389,7 @@ class Column extends Base {
 	 * These are typically unenforced foreign keys, and are used by the Query
 	 * class to help prime related items.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var array
 	 */
@@ -400,7 +400,7 @@ class Column extends Base {
 	/**
 	 * Sets up the order query, based on the query vars passed.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 *
 	 * @param string|array $args {
@@ -452,7 +452,7 @@ class Column extends Base {
 	/**
 	 * Parse column arguments
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @param array $args
 	 * @return array
@@ -520,7 +520,7 @@ class Column extends Base {
 	/**
 	 * Validate arguments after they are parsed.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access private
 	 * @param array $args
 	 * @return array
@@ -585,7 +585,7 @@ class Column extends Base {
 	/**
 	 * Force column arguments for special column types
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param array $args
 	 * @return array
@@ -616,7 +616,7 @@ class Column extends Base {
 	/**
 	 * Return if a column type is numeric or not.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @return boolean
 	 */
@@ -634,7 +634,7 @@ class Column extends Base {
 	/**
 	 * Return if this column is of a certain type.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @param mixed $type The type to check. Accepts an array.
 	 * @return boolean True if of type, False if not
 	 */
@@ -657,7 +657,7 @@ class Column extends Base {
 	/**
 	 * Sanitize capabilities array
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @param array $caps
 	 * @return array
 	 */
@@ -673,7 +673,7 @@ class Column extends Base {
 	/**
 	 * Sanitize aliases array using `sanitize_key()`
 	 *
-	 * @since 3.0.0
+	 * @since 1.0.0
 	 * @param array $aliases
 	 * @return array
 	 */
@@ -684,7 +684,7 @@ class Column extends Base {
 	/**
 	 * Sanitize relationships array
 	 *
-	 * @since 3.0.0
+	 * @since 1.0.0
 	 * @param array $relationships
 	 * @return array
 	 */
@@ -695,7 +695,7 @@ class Column extends Base {
 	/**
 	 * Sanitize the pattern
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @param mixed $pattern
 	 * @return string
 	 */
@@ -718,7 +718,7 @@ class Column extends Base {
 	/**
 	 * Sanitize the validation callback
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @param string $callback A callable PHP function name or method
 	 * @return string The most appropriate callback function for the value
 	 */
@@ -751,7 +751,7 @@ class Column extends Base {
 	/**
 	 * Fallback to validate a datetime value if no other is set.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @param string $value A datetime value that needs validating
 	 * @return string A valid datetime value
 	 */
@@ -785,7 +785,7 @@ class Column extends Base {
 	 *
 	 * From http://php.net/manual/en/function.uniqid.php#94959
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @param string $uuid The UUID value (empty on insert, string on update)
 	 * @return string Generated UUID.
 	 */
@@ -829,7 +829,7 @@ class Column extends Base {
 	 * Return a string representation of what this column's properties look like
 	 * in a MySQL
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * return string
 	 */

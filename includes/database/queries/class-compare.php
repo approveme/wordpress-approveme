@@ -6,7 +6,7 @@
  * @subpackage  Database\Queries
  * @copyright   Copyright (c) 2018, ApproveMe, LLC
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       3.0
+ * @since       1.0
  */
 namespace ApproveMe\Database\Queries;
 
@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
  * the `Base` query class. It extends `WP_Meta_Query` so the `compare` key accepts
  * the same parameters as the ones passed to `WP_Meta_Query`.
  *
- * @since 3.0
+ * @since 1.0
  */
 class Compare extends \WP_Meta_Query {
 
@@ -29,7 +29,7 @@ class Compare extends \WP_Meta_Query {
 	 *
 	 * "First-order" means that it's an array with a 'key' or 'value'.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param array  $clause       Query clause (passed by reference).
 	 * @param array  $parent_query Parent query array.

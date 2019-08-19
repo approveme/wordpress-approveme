@@ -6,7 +6,7 @@
  * @subpackage  Database\Schemas
  * @copyright   Copyright (c) 2018, ApproveMe, LLC
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       3.0
+ * @since       1.0
  */
 namespace ApproveMe\Database;
 
@@ -28,14 +28,14 @@ defined( 'ABSPATH' ) || exit;
  * - Tables upgrade via independent upgrade abstract methods
  * - Multisite friendly - site tables switch on "switch_blog" action
  *
- * @since 3.0
+ * @since 1.0
  */
 class Schema extends Base {
 
 	/**
 	 * Array of database column objects to turn into Column
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 * @var array
 	 */
@@ -44,7 +44,7 @@ class Schema extends Base {
 	/**
 	 * Invoke new column objects based on array of column data
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access public
 	 */
 	public function __construct() {
@@ -71,7 +71,7 @@ class Schema extends Base {
 	/**
 	 * Return the schema in string form
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 * @access protected
 	 */
 	protected function to_string() {

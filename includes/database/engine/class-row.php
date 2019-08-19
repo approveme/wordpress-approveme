@@ -6,7 +6,7 @@
  * @subpackage  Database\Rows
  * @copyright   Copyright (c) 2018, ApproveMe, LLC
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       3.0
+ * @since       1.0
  */
 namespace ApproveMe\Database;
 
@@ -24,14 +24,14 @@ defined( 'ABSPATH' ) || exit;
  * formatted differently, this class will make sure old values are still
  * supported and new values do not conflict.
  *
- * @since 3.0
+ * @since 1.0
  */
 class Row extends Base {
 
 	/**
 	 * Construct a database object
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param mixed Null by default, Array/Object if not
 	 */
@@ -44,7 +44,7 @@ class Row extends Base {
 	/**
 	 * Initialize class properties based on data array
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @param array $data
 	 */
@@ -55,7 +55,7 @@ class Row extends Base {
 	/**
 	 * Determines whether the current row exists.
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return boolean
 	 */

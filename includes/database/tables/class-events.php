@@ -6,7 +6,7 @@
  * @subpackage  Database\Tables
  * @copyright   Copyright (c) 2018, ApproveMe, LLC
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       3.0
+ * @since       1.0
  */
 namespace ApproveMe\Database\Tables;
 
@@ -18,7 +18,7 @@ use ApproveMe\Database\Table;
 /**
  * Setup the global "approveme_events" database table.
  *
- * @since 3.0
+ * @since 1.0
  */
 final class Events extends Table {
 
@@ -26,7 +26,7 @@ final class Events extends Table {
 	 * Table name.
 	 *
 	 * @access protected
-	 * @since 3.0
+	 * @since 1.0
 	 * @var string
 	 */
 	protected $name = 'events';
@@ -35,7 +35,7 @@ final class Events extends Table {
 	 * Database version.
 	 *
 	 * @access protected
-	 * @since 3.0
+	 * @since 1.0
 	 * @var int
 	 */
 	protected $version = 201908180001;
@@ -54,7 +54,7 @@ final class Events extends Table {
 	 * Set the classes $version property to the highest version needed.
 	 *
 	 * @access protected
-	 * @since 3.0
+	 * @since 1.0
 	 * @var array
 	 */
 	protected $upgrades = array();
@@ -63,7 +63,7 @@ final class Events extends Table {
 	 * Setup the database schema.
 	 *
 	 * @access protected
-	 * @since 3.0
+	 * @since 1.0
 	 */
 	protected function set_schema() {
 		$this->schema = "id bigint(20) unsigned NOT NULL auto_increment,
@@ -78,7 +78,7 @@ final class Events extends Table {
 	/**
 	 * Create the table
 	 *
-	 * @since 3.0
+	 * @since 1.0
 	 *
 	 * @return bool
 	 */
