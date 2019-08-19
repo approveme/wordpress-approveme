@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 use ApproveMe\Database\Query;
 
 /**
- * Class used for querying adjustments.
+ * Class used for querying events.
  *
  * @since 1.0
  *
@@ -102,7 +102,7 @@ class Event extends Query {
 	 * @access protected
 	 *
 	 * @param string|array $query {
-	 *     Optional. Array or query string of adjustment query parameters. Default empty.
+	 *     Optional. Array or query string of event query parameters. Default empty.
 	 *
 	 *     @type int          $id                   An event ID to only return that event. Default empty.
 	 *     @type array        $id__in               Array of event IDs to include. Default empty.

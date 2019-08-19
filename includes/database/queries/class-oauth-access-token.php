@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 use ApproveMe\Database\Query;
 
 /**
- * Class used for querying adjustments.
+ * Class used for querying oAuth Access Tokens.
  *
  * @since 1.0
  *
@@ -96,13 +96,13 @@ class oAuthAccessToken extends Query {
 	/** Methods ***************************************************************/
 
 	/**
-	 * Sets up the adjustment query, based on the query vars passed.
+	 * Sets up the oAuth Access Token query, based on the query vars passed.
 	 *
 	 * @since 1.0
 	 * @access protected
 	 *
 	 * @param string|array $query {
-	 *     Optional. Array or query string of adjustment query parameters. Default empty.
+	 *     Optional. Array or query string of oAuth Access Token query parameters. Default empty.
 	 *
 	 *     @type int          $id                   A oAuthAccessToken ID to only return that oAuthAccessToken. Default empty.
 	 *     @type array        $id__in               Array of oAuthAccessToken IDs to include. Default empty.
