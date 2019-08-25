@@ -63,7 +63,7 @@ final class ApproveMe_Requirements_Check {
 
 		// PHP
 		'php' => array(
-			'minimum' => '5.6',
+			'minimum' => '7.0',
 			'name'    => 'PHP',
 			'exists'  => true,
 			'current' => false,

@@ -63,6 +63,10 @@ class Base {
 	 */
 	public static function instance( $file = '' ) {
 
+		if ( ! empty( self::$instance->file ) ) {
+			$file = self::$instance->file;
+		}
+
 		// Return if already instantiated
 		if ( self::is_instantiated() ) {
 			return self::$instance;
@@ -74,6 +78,7 @@ class Base {
 		// Bootstrap
 		self::$instance->setup_constants();
 		self::$instance->setup_files();
+		self::$instance->setup_application();
 
 		// Return the instance
 		return self::$instance;
@@ -116,7 +121,7 @@ class Base {
 	private static function is_instantiated() {
 
 		// Return true if instance is correct class
-		if ( ! empty( self::$instance ) && ( self::$instance instanceof ApproveMe ) ) {
+		if ( ! empty( self::$instance ) && ( self::$instance instanceof \ApproveMe\Base ) ) {
 			return true;
 		}
 
@@ -184,6 +189,8 @@ class Base {
 	 */
 	private function setup_files() {
 		$this->configure_api();
+		$this->include_utilities();
+		$this->include_components();
 
 		// Admin
 		if ( is_admin() ) {
@@ -194,12 +201,56 @@ class Base {
 
 	}
 
+	private function setup_application() {
+		approveme_setup_components();
+	}
+
 	private function configure_api() {
 		$api_config = new \ApprovemeAPI\Client\Configuration();
 		$api_config->setAccessToken( APPROVEME_ACCESS_TOKEN );
 	}
 
 	/** Includes **************************************************************/
+
+	private function include_utilities() {
+		require_once APPROVEME_PLUGIN_DIR . 'includes/class-base-object.php';
+	}
+
+	private function include_components() {
+		// Component helpers are loaded before everything
+		require_once APPROVEME_PLUGIN_DIR . 'includes/interface-approveme-exception.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/component-functions.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/class-component.php';
+
+		// Database Engine
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/engine/class-base.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/engine/class-column.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/engine/class-schema.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/engine/class-query.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/engine/class-row.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/engine/class-table.php';
+
+		// Database Schemas
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/schemas/class-oauthclients.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/schemas/class-oauth-access-tokens.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/schemas/class-events.php';
+
+		// Database Objects
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/rows/class-oauthclient.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/rows/class-oauth-access-token.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/rows/class-event.php';
+
+		// Database Tables
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/tables/class-oauthclients.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/tables/class-oauth-access-tokens.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/tables/class-events.php';
+
+		// Database Table Query Interfaces
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-compare.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-oauthclient.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-oauth-access-token.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-event.php';
+	}
 
 	/**
 	 * Setup administration
@@ -215,15 +266,14 @@ class Base {
 	 *
 	 * @since 1.0
 	 */
-	private function include_frontend() {
-	}
+	private function include_frontend() {}
 
 }
 
 /**
  * Returns the instance of ApproveMe.
  *
- * The main function responsible for returning the one true Easy_Digital_Downloads
+ * The main function responsible for returning the one true ApproveMe
  * instance to functions everywhere.
  *
  * Use this function like you would a global variable, except without needing
@@ -235,5 +285,5 @@ class Base {
  * @return ApproveMe The one true ApproveMe instance.
  */
 function ApproveMe() {
-	return ApproveMe::instance();
+	return Base::instance();
 }
