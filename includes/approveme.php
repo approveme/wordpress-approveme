@@ -28,12 +28,19 @@ class Base {
 	private $file = '';
 
 	/**
-	 * EDD API Object.
+	 * ApproveMe API Object.
 	 *
 	 * @var object|Approveme_API\Client\Api
 	 * @since 1.5
 	 */
 	public $api;
+
+	/**
+	 * @var object|ApproveMe\Rest\
+	 * @since 1.0
+	 */
+	public $rest;
+
 
 	/**
 	 * ApproveMe Components array
@@ -76,7 +83,6 @@ class Base {
 		self::setup_instance( $file );
 
 		// Bootstrap
-		self::$instance->setup_constants();
 		self::$instance->setup_files();
 		self::$instance->setup_application();
 
@@ -141,46 +147,6 @@ class Base {
 	}
 
 	/**
-	 * Setup plugin constants.
-	 *
-	 * @access private
-	 * @since 1.4
-	 * @return void
-	 */
-	private function setup_constants() {
-
-		// Plugin version.
-		if ( ! defined( 'APPROVEME_VERSION' ) ) {
-			define( 'APPROVEME_VERSION', '0.1' );
-		}
-
-		// Plugin Root File.
-		if ( ! defined( 'APPROVEME_PLUGIN_FILE' ) ) {
-			define( 'APPROVEME_PLUGIN_FILE', self::$instance->file );
-		}
-
-		// Plugin Base Name.
-		if ( ! defined( 'APPROVEME_PLUGIN_BASE' ) ) {
-			define( 'APPROVEME_PLUGIN_BASE', plugin_basename( APPROVEME_PLUGIN_FILE ) );
-		}
-
-		// Plugin Folder Path.
-		if ( ! defined( 'APPROVEME_PLUGIN_DIR' ) ) {
-			define( 'APPROVEME_PLUGIN_DIR', plugin_dir_path( APPROVEME_PLUGIN_FILE ) );
-		}
-
-		// Plugin Folder URL.
-		if ( ! defined( 'APPROVEME_PLUGIN_URL' ) ) {
-			define( 'APPROVEME_PLUGIN_URL', plugin_dir_url( APPROVEME_PLUGIN_FILE ) );
-		}
-
-		// Make sure CAL_GREGORIAN is defined.
-		if ( ! defined( 'CAL_GREGORIAN' ) ) {
-			define( 'CAL_GREGORIAN', 1 );
-		}
-	}
-
-	/**
 	 * Include required files.
 	 *
 	 * @access private
@@ -188,7 +154,7 @@ class Base {
 	 * @return void
 	 */
 	private function setup_files() {
-		$this->configure_api();
+		$this->configure_apis();
 		$this->include_utilities();
 		$this->include_components();
 
@@ -205,9 +171,19 @@ class Base {
 		approveme_setup_components();
 	}
 
-	private function configure_api() {
+	private function configure_apis() {
+		// Load REST components
+		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/class-rest.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/rest-functions.php';
+
+		// REST API Endpoints
+		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-rest-controller.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-plugins-endpoints.php';
+
 		$api_config = new \ApprovemeAPI\Client\Configuration();
 		$api_config->setAccessToken( APPROVEME_ACCESS_TOKEN );
+
+		$this->rest = new REST();
 	}
 
 	/** Includes **************************************************************/

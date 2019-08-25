@@ -93,13 +93,43 @@ final class ApproveMe_Requirements_Check {
 		$this->file = __FILE__;
 		$this->base = plugin_basename( $this->file );
 
-		// Always load translations
-		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+		// Always load translations.
+		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ), 9 );
+
+		// Always load constants.
+		$this->register_constants();
 
 		// Load or quit
 		$this->met()
 			? $this->load()
 			: $this->quit();
+	}
+
+	private function register_constants() {
+		// Plugin version.
+		if ( ! defined( 'APPROVEME_VERSION' ) ) {
+			define( 'APPROVEME_VERSION', '0.1' );
+		}
+
+		// Plugin Root File.
+		if ( ! defined( 'APPROVEME_PLUGIN_FILE' ) ) {
+			define( 'APPROVEME_PLUGIN_FILE', $this->file );
+		}
+
+		// Plugin Base Name.
+		if ( ! defined( 'APPROVEME_PLUGIN_BASE' ) ) {
+			define( 'APPROVEME_PLUGIN_BASE', plugin_basename( APPROVEME_PLUGIN_FILE ) );
+		}
+
+		// Plugin Folder Path.
+		if ( ! defined( 'APPROVEME_PLUGIN_DIR' ) ) {
+			define( 'APPROVEME_PLUGIN_DIR', plugin_dir_path( APPROVEME_PLUGIN_FILE ) );
+		}
+
+		// Plugin Folder URL.
+		if ( ! defined( 'APPROVEME_PLUGIN_URL' ) ) {
+			define( 'APPROVEME_PLUGIN_URL', plugin_dir_url( APPROVEME_PLUGIN_FILE ) );
+		}
 	}
 
 	/**
