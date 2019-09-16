@@ -94,5 +94,7 @@ final class Events extends Table {
 
 	protected function __201909150001() {
 		@$this->get_db()->query( "ALTER TABLE {$this->table_name} ADD UNIQUE (approveme_id (100))" );
+
+		return $this->is_success();
 	}
 }
