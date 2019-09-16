@@ -17,7 +17,8 @@
     }
   ],
   "require-dev": {
-    "approveme/php-lib-approveme": "dev-master"
+    "approveme/php-lib-approveme": "dev-master",
+    "a5hleyrich/wp-background-processing": "dev-master"
   },
   "minimum-stability": "dev"
 }

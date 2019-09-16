@@ -50,6 +50,8 @@ class Base {
 	 */
 	public $components = array();
 
+	public $background_processor;
+
 	/**
 	 * Main ApproveMe Instance.
 	 *
@@ -165,6 +167,8 @@ class Base {
 			$this->include_frontend();
 		}
 
+		add_action( 'init', array( $this, 'setup_background_processor' ) );
+
 	}
 
 	private function setup_application() {
@@ -172,19 +176,30 @@ class Base {
 	}
 
 	private function configure_apis() {
-		// Load REST components
+
+		// Load REST components.
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/class-rest.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/rest-functions.php';
 
-		// REST API Endpoints
+		// REST API Endpoints.
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-rest-controller.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-plugins-endpoints.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-events-endpoints.php';
+
+		// Background processor.
+		require APPROVEME_PLUGIN_DIR . 'includes/class-logger.php';
+		require APPROVEME_PLUGIN_DIR . 'includes/class-background-processor.php';
 
 		$api_config = new \ApprovemeAPI\Client\Configuration();
 		$api_config->setAccessToken( APPROVEME_ACCESS_TOKEN );
 
 		$this->rest = new REST();
+
+	}
+
+	public function setup_background_processor() {
+		$background_processor = new \ApproveMe\Background_Process();
+		$background_processor->dispatch();
 	}
 
 	/** Includes **************************************************************/
