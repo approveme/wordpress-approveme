@@ -2,7 +2,7 @@
 namespace ApproveMe\REST\v1;
 
 /**
- * Implements REST routes and endpoints for Visits.
+ * Implements REST routes and endpoints for Plugins.
  *
  * @since 1.0
  *
@@ -19,7 +19,7 @@ class Plugins extends Controller {
 	public $object_type = 'approveme_plugins';
 
 	/**
-	 * Route base for visits.
+	 * Route base for plugins.
 	 *
 	 * @since 1.0
 	 * @access public
@@ -30,7 +30,7 @@ class Plugins extends Controller {
 	protected $supported_plugins = array();
 
 	/**
-	 * Registers Visit routes.
+	 * Registers Plugins routes.
 	 *
 	 * @since 1.0
 	 * @access public

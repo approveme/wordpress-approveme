@@ -179,6 +179,7 @@ class Base {
 		// REST API Endpoints
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-rest-controller.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-plugins-endpoints.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-events-endpoints.php';
 
 		$api_config = new \ApprovemeAPI\Client\Configuration();
 		$api_config->setAccessToken( APPROVEME_ACCESS_TOKEN );

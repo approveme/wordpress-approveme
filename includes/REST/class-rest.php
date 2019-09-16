@@ -9,13 +9,22 @@ namespace ApproveMe;
 class REST {
 
 	/**
-	 * REST Authentication.
+	 * REST plugins.
 	 *
 	 * @access protected
 	 * @since  1.0
 	 * @var    \ApproveMe\REST\v1\Plugins
 	 */
 	public $plugins;
+
+	/**
+	 * REST Events
+	 *
+	 * @access protected
+	 * @since 1.0
+	 * @var \ApproveMe\REST\v1\Events
+	 */
+	public $events;
 
 	/**
 	 * Constructor.
@@ -35,6 +44,7 @@ class REST {
 	 */
 	private function setup_endpoints() {
 		$this->plugins = new \ApproveMe\REST\v1\Plugins;
+		$this->events  = new \ApproveMe\REST\v1\Events;
 	}
 
 }

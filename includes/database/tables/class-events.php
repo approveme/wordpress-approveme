@@ -38,7 +38,7 @@ final class Events extends Table {
 	 * @since 1.0
 	 * @var int
 	 */
-	protected $version = 201908180001;
+	protected $version = 201909150001;
 
 	/**
 	 * Array of upgrade versions and methods.
@@ -57,7 +57,9 @@ final class Events extends Table {
 	 * @since 1.0
 	 * @var array
 	 */
-	protected $upgrades = array();
+	protected $upgrades = array(
+		'201909150001',
+	);
 
 	/**
 	 * Setup the database schema.
@@ -72,7 +74,8 @@ final class Events extends Table {
 			status int(1) unsigned NOT NULL default '0',
 			created_at timestamp,
 			processed_at timestamp,
-			PRIMARY KEY (id)";
+			PRIMARY KEY (id),
+			UNIQUE (approveme_id (100))";
 	}
 
 	/**
@@ -87,5 +90,9 @@ final class Events extends Table {
 		$created = parent::create();
 		return $created;
 
+	}
+
+	protected function __201909150001() {
+		@$this->get_db()->query( "ALTER TABLE {$this->table_name} ADD UNIQUE (approveme_id (100))" );
 	}
 }
