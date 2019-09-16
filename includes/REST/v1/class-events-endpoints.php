@@ -60,7 +60,6 @@ class Events extends Controller {
 	 * @return \WP_REST_Response|\WP_Error Array of visits, otherwise WP_Error.
 	 */
 	public function create_event( $request ) {
-		$output = array();
 
 		$collection_params = $this->get_collection_params();
 
