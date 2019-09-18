@@ -80,7 +80,6 @@ class Events extends Controller {
 					'status'       => 0,
 					'created_at'   => current_time( 'mysql' ),
 					'processed_at' => null,
-
 				)
 			);
 
