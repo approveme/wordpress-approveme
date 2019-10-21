@@ -47,13 +47,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:approveme/php-lib-approveme.git",
-                "reference": "7ceaec3cb0b3d6c98d4a01ff078cfc018299909a"
+                "url": "https://github.com/approveme/php-lib-approveme.git",
+                "reference": "b7272b75d93ce8dce75b2adfe7704aa1ccbc9011"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/approveme/php-lib-approveme/zipball/7ceaec3cb0b3d6c98d4a01ff078cfc018299909a",
-                "reference": "7ceaec3cb0b3d6c98d4a01ff078cfc018299909a",
+                "url": "https://api.github.com/repos/approveme/php-lib-approveme/zipball/b7272b75d93ce8dce75b2adfe7704aa1ccbc9011",
+                "reference": "b7272b75d93ce8dce75b2adfe7704aa1ccbc9011",
                 "shasum": ""
             },
             "require": {
@@ -99,7 +99,7 @@
                 "source": "https://github.com/approveme/php-lib-approveme/tree/master",
                 "issues": "https://github.com/approveme/php-lib-approveme/issues"
             },
-            "time": "2019-06-19T05:36:53+00:00"
+            "time": "2019-10-21T03:03:19+00:00"
         },
         {
             "name": "composer/installers",
@@ -229,18 +229,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "a7010cc9b52ecfa00051bb26e4ae025958fe9851"
+                "reference": "2b1dfedd8d59a521832c0837be045b83cd746fa0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a7010cc9b52ecfa00051bb26e4ae025958fe9851",
-                "reference": "a7010cc9b52ecfa00051bb26e4ae025958fe9851",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/2b1dfedd8d59a521832c0837be045b83cd746fa0",
+                "reference": "2b1dfedd8d59a521832c0837be045b83cd746fa0",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.4",
+                "guzzlehttp/psr7": "^1.6.1",
                 "php": ">=5.5"
             },
             "require-dev": {
@@ -287,7 +287,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2019-08-23T22:16:30+00:00"
+            "time": "2019-10-18T12:00:04+00:00"
         },
         {
             "name": "guzzlehttp/promises",
