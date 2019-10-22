@@ -9,8 +9,8 @@
  * @since       1.0
  */
 
+use ApprovemeAPI\Client\Configuration;
 // Exit if accessed directly
-
 defined( 'ABSPATH' ) || exit;
 
 function approveme_admin_menu() {
@@ -45,7 +45,6 @@ function approveme_admin_menu() {
 add_action( 'admin_menu', 'approveme_admin_menu' );
 
 function approveme_admin_styles() {
-	//var_dump(APPROVEME_PLUGIN_DIR . 'assets/admin/styles.css'); exit;
 	wp_register_style( 'approveme-admin', APPROVEME_PLUGIN_URL . '/assets/admin/styles.css', false, APPROVEME_VERSION );
 	wp_enqueue_style( 'approveme-admin' );
 }
@@ -86,5 +85,17 @@ function approveme_document_item( $document ) {
 }
 
 function approveme_settings() {
-
+	$url = trailingslashit( APPROVEME_APP_URL ) . 'oauth/authorize';
+	$url = add_query_arg( array(
+		'callback_url' => get_rest_url( null, 'approveme/v1/connect/callback' ),
+		'oauth_url'    => get_rest_url( null, 'approveme/v1/connect/oauth' ),
+	), $url );
+	?>
+	<div class="wrap">
+		<h1><?php _e( 'ApproveMe Connection', 'approveme' ); ?></h1>
+		<a class="button" href="<?php echo $url; ?>">
+			<?php _e( 'Connect', 'approveme' ); ?>
+		</a>
+	</div>
+	<?php
 }

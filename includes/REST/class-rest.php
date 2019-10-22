@@ -27,6 +27,15 @@ class REST {
 	public $events;
 
 	/**
+	 * REST Connect
+	 * 
+	 * @access protected
+	 * @since 1.0
+	 * @var \ApproveMe\REST\v1\Connect
+	 */
+	public $connect;
+
+	/**
 	 * Constructor.
 	 *
 	 * @access public
@@ -45,6 +54,7 @@ class REST {
 	private function setup_endpoints() {
 		$this->plugins = new \ApproveMe\REST\v1\Plugins;
 		$this->events  = new \ApproveMe\REST\v1\Events;
+		$this->connect = new \ApproveMe\REST\v1\Connect;
 	}
 
 }

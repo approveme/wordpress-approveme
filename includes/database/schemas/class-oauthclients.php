@@ -50,6 +50,14 @@ final class oAuthClients extends Schema {
 			'sortable'   => true,
 		),
 
+		// client_id
+		array(
+			'name' => 'client_id',
+			'type' => 'bigint',
+			'length' => '20',
+			'unsigned' => true,
+		),
+
 		// name
 		array(
 			'name'       => 'name',
@@ -76,6 +84,16 @@ final class oAuthClients extends Schema {
 			'date_query' => true,
 			'searchable' => true,
 			'sortable'   => true,
+		),
+
+
+		// default_account_id
+		array(
+			'name'       => 'default_account_id',
+			'type'       => 'varchar',
+			'length'     => '32',
+			'searchable' => true,
+			'sortable'   => false,
 		),
 
 	);

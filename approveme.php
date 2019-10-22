@@ -130,6 +130,10 @@ final class ApproveMe_Requirements_Check {
 		if ( ! defined( 'APPROVEME_PLUGIN_URL' ) ) {
 			define( 'APPROVEME_PLUGIN_URL', plugin_dir_url( APPROVEME_PLUGIN_FILE ) );
 		}
+
+		if ( ! defined( 'APPROVEME_APP_URL' ) ) {
+			define( 'APPROVEME_APP_URL', 'https://app.approveme.com' );
+		}
 	}
 
 	/**

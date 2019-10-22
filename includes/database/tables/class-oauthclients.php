@@ -38,7 +38,7 @@ final class oAuthClients extends Table {
 	 * @since 1.0
 	 * @var int
 	 */
-	protected $version = 201908180001;
+	protected $version = 2019102120090002;
 
 	/**
 	 * Array of upgrade versions and methods.
@@ -57,7 +57,10 @@ final class oAuthClients extends Table {
 	 * @since 1.0
 	 * @var array
 	 */
-	protected $upgrades = array();
+	protected $upgrades = array(
+		'2019102120090001',
+		'2019102120090002',
+	);
 
 	/**
 	 * Setup the database schema.
@@ -68,9 +71,11 @@ final class oAuthClients extends Table {
 	protected function set_schema() {
 		$this->schema = "id bigint(20) unsigned NOT NULL auto_increment,
 			user_id varchar(20) NOT NULL,
+			client_id bigint(20) unsigned,
 			name varchar(200) NOT NULL default '',
 			secret varchar(200) NOT NULL default '',
 			created_at timestamp,
+			default_account_id varchar(32) NOT NULL default '',
 			PRIMARY KEY (id)";
 	}
 
@@ -86,5 +91,34 @@ final class oAuthClients extends Table {
 		$created = parent::create();
 		return $created;
 
+	}
+
+	public function __2019102120090001() {
+		if ( ! $this->column_exists( 'default_account_id' ) ) {
+			@$this->get_db()->query( "ALTER TABLE {$this->table_name} ADD COLUMN default_account_id VARCHAR(32) AFTER created_at" );
+
+			if ( $this->column_exists( 'default_account_id' ) ) {
+				return $this->is_success();
+			} else {
+				return ! $this->is_success();
+			}
+		}
+
+		return $this->is_success();
+	}
+
+
+	public function __2019102120090002() {
+		if ( ! $this->column_exists( 'client_id' ) ) {
+			@$this->get_db()->query( "ALTER TABLE {$this->table_name} ADD COLUMN client_id BIGINT(20) AFTER user_id" );
+
+			if ( $this->column_exists( 'client_id' ) ) {
+				return $this->is_success();
+			} else {
+				return ! $this->is_success();
+			}
+		}
+
+		return $this->is_success();
 	}
 }

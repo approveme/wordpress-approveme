@@ -185,13 +185,11 @@ class Base {
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-rest-controller.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-plugins-endpoints.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-events-endpoints.php';
+		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-connect-endpoints.php';
 
 		// Background processor.
 		require APPROVEME_PLUGIN_DIR . 'includes/class-logger.php';
 		require APPROVEME_PLUGIN_DIR . 'includes/class-background-processor.php';
-
-		$api_config = new \ApprovemeAPI\Client\Configuration();
-		$api_config->setAccessToken( APPROVEME_ACCESS_TOKEN );
 
 		$this->rest = new REST();
 
@@ -199,7 +197,7 @@ class Base {
 
 	public function setup_background_processor() {
 		$background_processor = new \ApproveMe\Background_Process();
-		$background_processor->dispatch();
+		//$background_processor->dispatch();
 	}
 
 	/** Includes **************************************************************/
