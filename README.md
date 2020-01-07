@@ -56,5 +56,4 @@ In the browser visit http://appme.lndo.site
     Follow the installation instructions and then login
     Click on plugins from the left menu. After page load find ApproveMe and click activate
 
-Click ApproveMe from the left menu and then Settings
-    Click the connect button
+From the Settings menu, choose ApproveMe, and then click 'Connect'.
