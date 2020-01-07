@@ -61,17 +61,11 @@ class ComposerStaticInit0c29ecbfdd12a191a04b2a5c88329360
         ),
     );
 
-    public static $classMap = array (
-        'WP_Async_Request' => __DIR__ . '/..' . '/a5hleyrich/wp-background-processing/classes/wp-async-request.php',
-        'WP_Background_Process' => __DIR__ . '/..' . '/a5hleyrich/wp-background-processing/classes/wp-background-process.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit0c29ecbfdd12a191a04b2a5c88329360::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit0c29ecbfdd12a191a04b2a5c88329360::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit0c29ecbfdd12a191a04b2a5c88329360::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -1,43 +1,5 @@
 [
     {
-        "name": "a5hleyrich/wp-background-processing",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/A5hleyRich/wp-background-processing.git",
-            "reference": "1f070aab5058dbaf45d5435a343033ddd8a641b1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/A5hleyRich/wp-background-processing/zipball/1f070aab5058dbaf45d5435a343033ddd8a641b1",
-            "reference": "1f070aab5058dbaf45d5435a343033ddd8a641b1",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2"
-        },
-        "time": "2018-02-12T09:24:05+00:00",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "classmap": [
-                "classes/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0-only"
-        ],
-        "authors": [
-            {
-                "name": "Ashley Rich",
-                "email": "hello@ashleyrich.com"
-            }
-        ],
-        "description": "WP Background Processing can be used to fire off non-blocking asynchronous requests or as a background processing tool, allowing you to queue tasks."
-    },
-    {
         "name": "approveme/php-lib-approveme",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -224,17 +186,17 @@
     },
     {
         "name": "guzzlehttp/guzzle",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "6.5.x-dev",
+        "version_normalized": "6.5.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/guzzle.git",
-            "reference": "2b1dfedd8d59a521832c0837be045b83cd746fa0"
+            "reference": "400cefd25a23a3098486bfb52685b5367a464171"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/2b1dfedd8d59a521832c0837be045b83cd746fa0",
-            "reference": "2b1dfedd8d59a521832c0837be045b83cd746fa0",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/400cefd25a23a3098486bfb52685b5367a464171",
+            "reference": "400cefd25a23a3098486bfb52685b5367a464171",
             "shasum": ""
         },
         "require": {
@@ -249,13 +211,14 @@
             "psr/log": "^1.1"
         },
         "suggest": {
+            "ext-intl": "Required for Internationalized Domain Name (IDN) support",
             "psr/log": "Required for using the Log middleware"
         },
-        "time": "2019-10-18T12:00:04+00:00",
+        "time": "2019-12-30T04:52:42+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "6.3-dev"
+                "dev-master": "6.5-dev"
             }
         },
         "installation-source": "source",
@@ -297,12 +260,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/promises.git",
-            "reference": "17d36ed176c998839582c739ce0753381598edf0"
+            "reference": "ac2529fc650684c5cd687e2b462d046cdbed556e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/promises/zipball/17d36ed176c998839582c739ce0753381598edf0",
-            "reference": "17d36ed176c998839582c739ce0753381598edf0",
+            "url": "https://api.github.com/repos/guzzle/promises/zipball/ac2529fc650684c5cd687e2b462d046cdbed556e",
+            "reference": "ac2529fc650684c5cd687e2b462d046cdbed556e",
             "shasum": ""
         },
         "require": {
@@ -311,7 +274,7 @@
         "require-dev": {
             "phpunit/phpunit": "^5.7.27 || ^7.5"
         },
-        "time": "2019-07-02T14:54:06+00:00",
+        "time": "2019-12-17T17:19:17+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -350,12 +313,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/psr7.git",
-            "reference": "2595b33c1c924889b474d324f3d719fa40b6954e"
+            "reference": "c291e45d40e638815990004e5f7ee367c2b752e9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/psr7/zipball/2595b33c1c924889b474d324f3d719fa40b6954e",
-            "reference": "2595b33c1c924889b474d324f3d719fa40b6954e",
+            "url": "https://api.github.com/repos/guzzle/psr7/zipball/c291e45d40e638815990004e5f7ee367c2b752e9",
+            "reference": "c291e45d40e638815990004e5f7ee367c2b752e9",
             "shasum": ""
         },
         "require": {
@@ -373,7 +336,7 @@
         "suggest": {
             "zendframework/zend-httphandlerrunner": "Emit PSR-7 responses"
         },
-        "time": "2019-08-13T16:05:52+00:00",
+        "time": "2019-12-21T15:35:40+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

@@ -52,8 +52,6 @@ class REST {
 	 * @since  1.0
 	 */
 	private function setup_endpoints() {
-		$this->plugins = new \ApproveMe\REST\v1\Plugins;
-		$this->events  = new \ApproveMe\REST\v1\Events;
 		$this->connect = new \ApproveMe\REST\v1\Connect;
 	}
 

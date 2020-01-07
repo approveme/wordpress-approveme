@@ -50,8 +50,6 @@ class Base {
 	 */
 	public $components = array();
 
-	public $background_processor;
-
 	/**
 	 * Main ApproveMe Instance.
 	 *
@@ -167,8 +165,6 @@ class Base {
 			$this->include_frontend();
 		}
 
-		add_action( 'init', array( $this, 'setup_background_processor' ) );
-
 	}
 
 	private function setup_application() {
@@ -179,25 +175,13 @@ class Base {
 
 		// Load REST components.
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/class-rest.php';
-		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/rest-functions.php';
 
 		// REST API Endpoints.
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-rest-controller.php';
-		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-plugins-endpoints.php';
-		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-events-endpoints.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/REST/v1/class-connect-endpoints.php';
-
-		// Background processor.
-		require APPROVEME_PLUGIN_DIR . 'includes/class-logger.php';
-		require APPROVEME_PLUGIN_DIR . 'includes/class-background-processor.php';
 
 		$this->rest = new REST();
 
-	}
-
-	public function setup_background_processor() {
-		$background_processor = new \ApproveMe\Background_Process();
-		//$background_processor->dispatch();
 	}
 
 	/** Includes **************************************************************/
@@ -223,23 +207,19 @@ class Base {
 		// Database Schemas
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/schemas/class-oauthclients.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/schemas/class-oauth-access-tokens.php';
-		require_once APPROVEME_PLUGIN_DIR . 'includes/database/schemas/class-events.php';
 
 		// Database Objects
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/rows/class-oauthclient.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/rows/class-oauth-access-token.php';
-		require_once APPROVEME_PLUGIN_DIR . 'includes/database/rows/class-event.php';
 
 		// Database Tables
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/tables/class-oauthclients.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/tables/class-oauth-access-tokens.php';
-		require_once APPROVEME_PLUGIN_DIR . 'includes/database/tables/class-events.php';
 
 		// Database Table Query Interfaces
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-compare.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-oauthclient.php';
 		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-oauth-access-token.php';
-		require_once APPROVEME_PLUGIN_DIR . 'includes/database/queries/class-event.php';
 	}
 
 	/**
